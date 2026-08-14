@@ -240,7 +240,7 @@ body { background: #f4f1ee; font-family: var(--body); color: var(--ink); }
   stroke-linecap: round; }
 .url-pill span { font-family: var(--body); font-weight: 700; font-size: 36px; color: var(--cream); letter-spacing: 0.5px; }
 
-.browser { position: absolute; left: 250px; top: 930px; width: 2330px; z-index: 2;
+.browser { position: absolute; left: 250px; top: 995px; width: 2330px; z-index: 2;
   transform: rotate(-3deg); border-radius: 36px; overflow: hidden;
   box-shadow: 0 100px 190px rgba(0,0,0,0.5), 0 40px 80px rgba(0,0,0,0.35);
   background: #efe9e3; }
@@ -394,25 +394,25 @@ body { background: #f4f1ee; font-family: var(--body); color: var(--ink); }
 .frame.f-recog { background: var(--cream); }
 .recog-bg { position: absolute; inset: 0; z-index: 0; }
 .recog-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
-  filter: blur(5px) saturate(0.85); transform: scale(1.03); }
+  filter: saturate(0.92) contrast(1.04); }
 .recog-wash { position: absolute; inset: 0; z-index: 1; background:
-  linear-gradient(180deg, rgba(250,248,246,0.97) 0%, rgba(250,248,246,0.93) 26%,
-    rgba(250,248,246,0.78) 48%, rgba(250,248,246,0.60) 72%, rgba(250,248,246,0.68) 100%); }
+  linear-gradient(180deg, rgba(26,5,16,0.82) 0%, rgba(74,16,32,0.58) 24%,
+    rgba(42,10,20,0.68) 55%, rgba(20,5,16,0.92) 100%),
+  radial-gradient(ellipse 60% 50% at 50% 16%, rgba(217,58,58,0.14), transparent 60%); }
 .frame.f-recog .caption, .frame.f-recog .benefit, .frame.f-recog .wall { z-index: 4; }
 .wall { position: absolute; left: 92px; right: 92px; top: 660px; z-index: 4;
   display: flex; flex-direction: column; }
 .w-label { font-family: var(--body); font-weight: 700; font-size: 30px; letter-spacing: 5px;
-  color: #55504a; text-align: center; margin: 0 0 26px;
-  text-shadow: 0 0 20px rgba(250,248,246,0.95), 0 0 8px rgba(250,248,246,0.9), 0 1px 3px rgba(250,248,246,0.8); }
+  color: rgba(250,248,246,0.85); text-align: center; margin: 0 0 26px; }
 .w-gap { height: 58px; }
 .w-grid { display: grid; gap: 22px; }
-.w-grid.m5 { grid-template-columns: repeat(5, 1fr); }
+.w-grid.m3 { grid-template-columns: repeat(3, 1fr); }
 .w-grid.p3c { grid-template-columns: repeat(3, 1fr); }
 .wt { border-radius: 24px; display: flex; align-items: center; justify-content: center; }
-.wt.media { background: #fff; height: 205px; padding: 34px 28px;
+.wt.media { background: #fff; height: 235px; padding: 38px 44px;
   box-shadow: 0 14px 34px -12px rgba(40,15,22,0.16); }
-.wt.media img { max-width: 100%; max-height: 132px; object-fit: contain; }
-.wt.partner { background: rgba(255,255,255,0.5); border: 2px solid rgba(26,26,26,0.07);
+.wt.media img { max-width: 100%; max-height: 155px; object-fit: contain; }
+.wt.partner { background: rgba(250,248,246,0.90); border: 2px solid rgba(255,255,255,0.35);
   height: 178px; padding: 28px 34px; }
 .wt.partner img { max-width: 100%; max-height: 118px; object-fit: contain; }
 
@@ -526,11 +526,11 @@ body.export .frame-wrap .frame { transform: none; }
                 <div class="index">
                   <div class="row">
                     <div class="tile"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4L12 3z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></svg></div>
-                    <span>AI mentor matching</span>
+                    <span>Smart Matching</span>
                   </div>
                   <div class="row">
                     <div class="tile"><svg viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="13" height="11" rx="2.5"/><path d="M15.5 10.5l6-3.5v10l-6-3.5"/></svg></div>
-                    <span>Video answers from mentors</span>
+                    <span>Video Based Mentorship</span>
                   </div>
                   <div class="row">
                     <div class="tile"><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></svg></div>
@@ -542,7 +542,7 @@ body.export .frame-wrap .frame { transform: none; }
                   </div>
                   <div class="row">
                     <div class="tile"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 4 5.6 4 9s-1.2 6.4-4 9c-2.8-2.6-4-5.6-4-9s1.2-6.4 4-9z"/></svg></div>
-                    <span>Plus the full web platform</span>
+                    <span>Access the P3 Web Platform</span>
                   </div>
                 </div>
                 <div class="stat-row">
@@ -569,11 +569,11 @@ body.export .frame-wrap .frame { transform: none; }
                 <div class="index">
                   <div class="row">
                     <div class="tile"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4L12 3z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></svg></div>
-                    <span>AI mentor matching</span>
+                    <span>Smart Matching</span>
                   </div>
                   <div class="row">
                     <div class="tile"><svg viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="13" height="11" rx="2.5"/><path d="M15.5 10.5l6-3.5v10l-6-3.5"/></svg></div>
-                    <span>Video answers from mentors</span>
+                    <span>Video Based Mentorship</span>
                   </div>
                   <div class="row">
                     <div class="tile"><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></svg></div>
@@ -585,7 +585,7 @@ body.export .frame-wrap .frame { transform: none; }
                   </div>
                   <div class="row">
                     <div class="tile"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 4 5.6 4 9s-1.2 6.4-4 9c-2.8-2.6-4-5.6-4-9s1.2-6.4 4-9z"/></svg></div>
-                    <span>Plus the full web platform</span>
+                    <span>Access the P3 Web Platform</span>
                   </div>
                 </div>
                 <div class="stat-row">
@@ -753,7 +753,7 @@ body.export .frame-wrap .frame { transform: none; }
     <!-- ============ FRAME 8: recognized (real partner logos) ============ -->
     <div class="slot">
       <div class="frame-wrap" data-zoom="frame-08">
-        <div class="frame f-recog" id="frame-08">
+        <div class="frame dark f-recog" id="frame-08">
           <div class="recog-bg"><img src="assets/recognized-bg.jpg" alt=""></div>
           <div class="recog-wash"></div>
           <div class="caption">
@@ -762,12 +762,13 @@ body.export .frame-wrap .frame { transform: none; }
           <div class="benefit"><div class="b-sub">The network behind every open door</div></div>
           <div class="wall">
             <div class="w-label">AS SEEN IN</div>
-            <div class="w-grid m5">
+            <div class="w-grid m3">
               <div class="wt media"><img src="assets/logos/abc-news.png" alt="abc-news"></div>
               <div class="wt media"><img src="assets/logos/nyt.png" alt="nyt"></div>
               <div class="wt media"><img src="assets/logos/today.png" alt="today"></div>
               <div class="wt media"><img src="assets/logos/adweek.png" alt="adweek"></div>
-              <div class="wt media" style="gap:14px"><img src="assets/logos/webby.svg" alt="Webby Awards" style="height:88px;width:auto;flex:none"><div style="font-family:var(--body);font-weight:800;font-size:25px;line-height:1.1;color:#191919;letter-spacing:0.5px">THE<br>WEBBY<br>AWARDS</div></div>
+              <div class="wt media"><img src="assets/logos/versus.png" alt="Versus" style="max-height:96px"></div>
+              <div class="wt media" style="gap:14px"><img src="assets/logos/webby.svg" alt="Webby Awards" style="height:108px;width:auto;flex:none"><div style="font-family:var(--body);font-weight:800;font-size:25px;line-height:1.1;color:#191919;letter-spacing:0.5px">THE<br>WEBBY<br>AWARDS</div></div>
             </div>
             <div class="w-gap"></div>
             <div class="w-label">ACADEMIC PARTNERS</div>
@@ -785,7 +786,7 @@ body.export .frame-wrap .frame { transform: none; }
               <div class="wt partner"><img src="assets/logos/mbk.png" alt="mbk"></div>
               <div class="wt partner"><img src="assets/logos/champs.png" alt="champs"></div>
               <div class="wt partner"><img src="assets/logos/100bm.png" alt="100bm"></div>
-              <div class="wt partner"><img src="assets/logos/build.png" alt="build"></div>
+              <div class="wt partner"><img src="assets/logos/build.png" alt="build" style="max-height:88px"></div>
               <div class="wt partner"><img src="assets/logos/project-hood.png" alt="project-hood"></div>
               <div class="wt partner"><img src="assets/logos/gilead.png" alt="gilead"></div>
             </div>
@@ -796,7 +797,7 @@ body.export .frame-wrap .frame { transform: none; }
               <div class="wt partner"><img src="assets/logos/mentor.png" alt="mentor"></div>
               <div class="wt partner"><img src="assets/logos/lsu.png" alt="lsu"></div>
               <div class="wt partner"><img src="assets/logos/michigan.png" alt="michigan"></div>
-              <div class="wt partner"><img src="assets/logos/lurie.png" alt="lurie"></div>
+              <div class="wt partner"><img src="assets/logos/kepler.png" alt="Kepler"></div>
               <div class="wt partner"><img src="assets/logos/3advance.png" alt="3advance"></div>
             </div>
           </div>
