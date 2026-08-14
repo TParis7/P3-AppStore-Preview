@@ -412,11 +412,13 @@ body { background: #f4f1ee; font-family: var(--body); color: var(--ink); }
 .wt.media { background: #fff; height: 235px; padding: 38px 44px;
   box-shadow: 0 14px 34px -12px rgba(40,15,22,0.16); }
 .wt.media img { max-width: 100%; max-height: 155px; object-fit: contain; }
-.wt.partner { background: rgba(255,255,255,0.14); border: 2.5px solid rgba(255,255,255,0.32);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.28); height: 178px; padding: 28px 34px; }
-.wt.partner img { max-width: 100%; max-height: 118px; object-fit: contain;
-  filter: drop-shadow(0 0 3px rgba(255,255,255,0.98)) drop-shadow(0 0 14px rgba(255,255,255,0.92))
-          drop-shadow(0 0 30px rgba(255,255,255,0.75)); }
+.wt.partner { background: rgba(255,255,255,0.10); border: none; box-shadow: none;
+  height: 178px; padding: 28px 34px; position: relative; overflow: hidden; }
+.wt.partner .frost-bg { content: ""; position: absolute; inset: -36px; z-index: 0;
+  background-repeat: no-repeat; filter: blur(22px) brightness(1.45) saturate(0.85);
+  pointer-events: none; }
+.wt.partner img { position: relative; z-index: 1; }
+.wt.partner img { max-width: 100%; max-height: 118px; object-fit: contain; }
 
 /* --- Frame 3: match constellation (real mentor photos) --- */
 .constellation { position: absolute; left: 0; top: 500px; width: 1320px; height: 1900px; z-index: 2; }
@@ -910,6 +912,28 @@ body.export .frame-wrap .frame { transform: none; }
       });
     });
   }
+
+  // Frame 8 frosted tiles: per-tile blurred slice of the background photo,
+  // aligned via offset chain (transform-independent), veiled for readability.
+  (function frost() {
+    var frame = document.getElementById('frame-08');
+    if (!frame) return;
+    var IMG_W = 2000, IMG_H = 1333, FW = 1320, FH = 2868, POSY = 0.30, BLEED = 36;
+    var scale = Math.max(FW / IMG_W, FH / IMG_H);
+    var dw = IMG_W * scale, dh = IMG_H * scale;
+    var ox = (FW - dw) * 0.5, oy = (FH - dh) * POSY;
+    document.querySelectorAll('#frame-08 .wt.partner').forEach(function (t) {
+      var tx = 0, ty = 0, el = t;
+      while (el && el !== frame) { tx += el.offsetLeft; ty += el.offsetTop; el = el.offsetParent; }
+      var span = document.createElement('span');
+      span.className = 'frost-bg';
+      span.style.backgroundImage =
+        'linear-gradient(rgba(255,255,255,0.34), rgba(255,255,255,0.34)), url(assets/recognized-bg.jpg)';
+      span.style.backgroundSize = 'auto, ' + dw + 'px ' + dh + 'px';
+      span.style.backgroundPosition = '0 0, ' + (ox - (tx - BLEED)) + 'px ' + (oy - (ty - BLEED)) + 'px';
+      t.insertBefore(span, t.firstChild);
+    });
+  })();
 
 
   const hint = document.getElementById('scroll-hint');
